@@ -5,13 +5,8 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int t, x, n;
-    cin >> t;
-    while (t--)
-    {
-        cin >> x >> n;
-        cout << ((x / 10) * n) << "\n";
-    }
-
+    int x, h;
+    cin >> x >> h;
+    cout << ((x <= 4) ? h : (((x - 4) * 24) + h)) << "\n";
     return 0;
 }

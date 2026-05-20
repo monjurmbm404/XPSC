@@ -5,11 +5,10 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int t;
+    int t, n, x;
     cin >> t;
     while (t--)
     {
-        int n, x;
         cin >> n;
         map<int, int> mp;
         for (int i = 0; i < n; i++)
