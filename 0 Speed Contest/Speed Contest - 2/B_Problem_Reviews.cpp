@@ -5,25 +5,19 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int t;
+    int t, n, s, flag;
     cin >> t;
     while (t--)
     {
-        int n, s, flag = 1;
+        flag = 1;
         cin >> n;
         for (int i = 0; i < n; i++)
         {
             cin >> s;
             if (s <= 4)
-            {
                 flag = 0;
-                // break;
-            }
         }
-        if (flag)
-            cout << "YES\n";
-        else
-            cout << "NO\n";
+        cout << (flag ? "YES\n" : "NO\n");
     }
 
     return 0;
