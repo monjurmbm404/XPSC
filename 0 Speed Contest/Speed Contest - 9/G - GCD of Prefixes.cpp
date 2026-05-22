@@ -40,6 +40,5 @@ int main()
                 cout << v[i] << " ";
         cout << "\n";
     }
-
     return 0;
 }
