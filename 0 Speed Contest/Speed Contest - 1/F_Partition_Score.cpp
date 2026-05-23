@@ -13,14 +13,11 @@ int main()
         cin >> n >> k;
         vector<int> v(n);
         for (int i = 0; i < n; i++)
-        {
             cin >> v[i];
-        }
         sort(v.begin(), v.end());
-        int score = v[0] + v[n - 1] + v[n-2] + v[n-k-1];
-        if(k ==1){
-            score = v[0]+ v[n-2]  + v[n - 1]  + v[n - 1] ;
-        }
+        int score = v[0] + v[n - 1] + v[n - 2] + v[n - k - 1];
+        if (k == 1)
+            score = v[0] + v[n - 2] + v[n - 1] + v[n - 1];
         cout << score << endl;
     }
 
