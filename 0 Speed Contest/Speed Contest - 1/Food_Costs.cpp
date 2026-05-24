@@ -1,3 +1,5 @@
+// problem link: https://www.codechef.com/problems/FOODCOST
+
 #include <bits/stdc++.h>
 using namespace std;
 int main()
@@ -5,10 +7,9 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int n, m;
-    cin >> n >> m;
-    int ans = (n * 6) + m;
-    cout << ans;
+    int x, y;
+    cin >> x >> y;
+    cout << (x * 6 + y);
 
     return 0;
 }
