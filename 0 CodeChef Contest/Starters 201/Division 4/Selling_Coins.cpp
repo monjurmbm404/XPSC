@@ -1,5 +1,3 @@
-// problem link: https://www.codechef.com/problems/LMP1
-
 #include <bits/stdc++.h>
 using namespace std;
 int main()
@@ -7,10 +5,9 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int x, y;
-    cin >> x >> y;
-
-    cout << (x >= y ? "YES" : "NO");
+    int a,b;
+    cin >> a >> b;
+    cout << (a + (b*2));
 
     return 0;
 }
