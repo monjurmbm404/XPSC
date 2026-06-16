@@ -5,20 +5,18 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int t, divisor, n;
+    int t, n, divisor;
     cin >> t;
     while (t--)
     {
         cin >> n;
-        int temp = n;
-        long long ans = 0;
-        divisor = n / 3;
-        ans += 5 * divisor;
-        n -= (divisor * 3);
+        int ans = (n / 3) * 5;
+        n -= (n / 3) * 3;
         if (n == 2)
             ans += 4;
         else if (n == 1)
-            ans -= 5, ans += 8;
+            ans += 3;
+
         cout << ans << "\n";
     }
 

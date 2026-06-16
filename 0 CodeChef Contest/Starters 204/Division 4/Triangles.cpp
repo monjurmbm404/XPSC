@@ -5,15 +5,9 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        long long n;
-        cin >> n;
-        
-    }
-    
+    int a, b;
+    cin >> a >> b;
+    cout << 180 - (a + b);
 
     return 0;
 }

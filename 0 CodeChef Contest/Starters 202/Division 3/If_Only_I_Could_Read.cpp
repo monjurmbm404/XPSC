@@ -5,11 +5,10 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int t;
+    int t, n;
     cin >> t;
     while (t--)
     {
-        int n;
         cin >> n;
         vector<int> v(n);
 
@@ -18,20 +17,17 @@ int main()
 
         int l = -1, r = -1;
 
-        for (int i = 0; i + 1 < n; i++)
-        {
+        for (int i = 0; i < n - 1; i++)
             if (v[i] > v[i + 1])
             {
-                l = i;
-                r = i + 1;
+                l = ++i, r = ++i;
                 break;
             }
-        }
 
         if (l == -1 && r == -1)
             cout << -1 << "\n";
         else
-            cout << l + 1 << " " << r + 1 << "\n";
+            cout << l << " " << r << "\n";
     }
 
     return 0;
