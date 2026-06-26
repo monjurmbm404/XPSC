@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 int main()
 {
     ios::sync_with_stdio(false);
@@ -8,42 +7,39 @@ int main()
 
     string s;
     cin >> s;
+    map<char, int> mp;
 
-    vector<int> cnt(26, 0);
-
-    for(char c : s)
-        cnt[c - 'A']++;
+    for (char c : s)
+        mp[c]++;
 
     int odd = 0;
-    char mid = '#';
 
-    for(int i = 0; i < 26; i++)
-    {
-        if(cnt[i] % 2)
-        {
+    for (auto [val, cnt] : mp)
+        if (cnt % 2 == 1)
             odd++;
-            mid = char('A' + i);
-        }
-    }
 
-    if(odd > 1)
+    if (odd > 1)
+        cout << "NO SOLUTION";
+    else
     {
-        cout << "NO SOLUTION\n";
-        return 0;
+        string s1;
+        char middle_char;
+        int middle_char_count = 0;
+
+        for (auto [val, cnt] : mp)
+            if (cnt % 2 == 1)
+                middle_char = val, middle_char_count = cnt;
+            else
+                while (cnt)
+                    s1.push_back(val), cnt -= 2;
+
+        string s2 = s1;
+        reverse(s2.begin(), s2.end());
+        while (middle_char_count--)
+            s1.push_back(middle_char);
+
+        cout << s1 + s2;
     }
 
-    string left = "";
-
-    for(int i = 0; i < 26; i++)
-        left.append(cnt[i] / 2, char('A' + i));
-
-    string right = left;
-    reverse(right.begin(), right.end());
-
-    string middle = "";
-
-    if(mid != '#')
-        middle.append(cnt[mid - 'A'], mid);
-
-    cout << left + middle + right << '\n';
+    return 0;
 }
