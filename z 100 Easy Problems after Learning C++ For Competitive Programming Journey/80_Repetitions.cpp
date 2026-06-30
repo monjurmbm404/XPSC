@@ -1,0 +1,34 @@
+// https://cses.fi/problemset/task/1069
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    string s;
+    cin >> s;
+
+    int best = 1, cur = 1;
+
+    for (int i = 1; i < (int)s.size(); i++)
+    {
+        if (s[i] == s[i - 1])
+        {
+            cur++;
+        }
+        else
+        {
+            best = max(best, cur);
+            cur = 1;
+        }
+    }
+
+    best = max(best, cur);
+
+    cout << best << '\n';
+
+    return 0;
+}
