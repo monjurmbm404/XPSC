@@ -3,9 +3,9 @@ using namespace std;
 
 bool kth_bit_on(long long n, int k) { return ((n >> k) & 1); }
 
-int turn_on_kth_bit(long long n, int k) { return (n | 1LL << k); }
+long long turn_on_kth_bit(long long n, int k) { return (n | (1LL << k)); }
 
-int turn_off_kth_bit(long long n, int k) { return (n & ~(1LL << k)); }
+long long turn_off_kth_bit(long long n, int k) { return (n & (~(1LL << k))); }
 int main()
 {
     ios::sync_with_stdio(false);
@@ -15,7 +15,7 @@ int main()
     cin >> t;
     while (t--)
     {
-        long long a, b, c, d;
+        long long a = 0, b, c, d;
         cin >> b >> c >> d;
 
         a = b;
