@@ -27,7 +27,7 @@ int main()
             }
         }
         int ans = (1 << cnt);
-
+ 
         cout << ans << "\n";
     }
 
